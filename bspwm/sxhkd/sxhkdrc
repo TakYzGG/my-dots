@@ -1,0 +1,109 @@
+# Bspwm hotkeys
+
+# Programas
+super + Return
+	lxterminal
+super + F1
+	rofi -show drun -b
+alt + F1
+	rofi -show run
+super + w
+	firefox
+super + e
+	lxterminal -e vifm ~/
+super + m
+	lxterminal -e cmus
+
+# Scripts
+super + F2
+	/usr/local/bin/Screenshot
+alt + F2
+	/usr/local/bin/Wifi
+super + F3
+	/usr/local/bin/PDF
+alt + F3
+	/usr/local/bin/Bluetooth
+super + F11
+	/usr/local/bin/Wallpaper
+alt + F11
+	/usr/local/bin/Bspwm-Themes
+super + F12
+	/usr/local/bin/PowerMenu
+alt + F12
+	/usr/local/bin/Teclado
+
+# Control de brillo
+XF86MonBrightnessDown
+	brightnessctl set 1%-
+XF86MonBrightnessUp
+	brightnessctl set +1%
+
+# Control de volumen PulseAudio
+XF86AudioRaiseVolume
+	pamixer -i 5
+XF86AudioLowerVolume
+	pamixer -d 5
+XF86AudioMute
+	pamixer --toggle-mute
+
+# Recargar bspwm
+super + shift + r
+	bspc wm -r
+
+# Salir de bspwm
+super + shift + F11
+	bspc quit
+
+# Cambiar de ventana
+super + j
+	bspc node -f next.local.!hidden.window
+super + k
+	bspc node -f prev.local.!hidden.window
+
+# Cerrar una ventana
+super + shift + q
+	bspc node -c
+
+# Entrar en pantalla completa
+super + shift + f
+	bspc node -t fullscreen
+
+# Hacer una ventana flotante
+super + space
+	bspc node -t floating
+
+# Volver al modo tiling
+super + shift + space
+	bspc node -t tiled
+
+# Cambiar de escritorio
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Cambiar direccion de la siguiente ventana
+super + ctrl + h
+	bspc node -p west
+super + ctrl + j
+	bspc node -p south
+super + ctrl + k
+	bspc node -p north
+super + ctrl + l
+	bspc node -p east
+
+# Mover una ventana flotante
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Expandir una ventana flotante
+super + shift + Left
+	bspc node -z left -20 0
+super + shift + Down
+	bspc node -z bottom 0 20
+super + shift + Up
+	bspc node -z top 0 -20
+super + shift + Right
+	bspc node -z right 20 0
+
+# Reducir una ventana flotante
+super + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
