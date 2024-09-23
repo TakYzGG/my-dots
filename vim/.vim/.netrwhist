@@ -1,1 +1,8 @@
-.vi
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/takyz/.config/polybar'
+let g:netrw_dirhist_5='/home/takyz/.config/polybar/grayblocks'
+let g:netrw_dirhist_4='/home/takyz/polybar-collection/themes/minimal'
+let g:netrw_dirhist_3='/home/takyz/.config/dmenu-menus'
+let g:netrw_dirhist_2='/home/takyz/gcolors/gcolors'
+let g:netrw_dirhist_1='/home/takyz/.config/cmus'
