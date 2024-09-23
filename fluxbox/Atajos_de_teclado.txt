@@ -1,0 +1,31 @@
+Atajos de teclado de fluxbox
+
+<--cambiar de ventana-->
+
+<--cambiar de escritorio-->
+   win + 0-9
+
+<--mover una ventana de un estritorio a otro-->
+   win + shift + 0-9
+
+<--mover una ventana y cambiar de escritorio-->
+   win + ctrl + 0-9
+
+<--atajos de ventana-->>
+   win + shift + q 	   (cerrar)
+   F9        	   (minimizar)
+   F10       	   (maximizar)
+   F11	           (pantalla completa)
+   alt + click derecho     (redimencionar)
+
+<--abrir programas-->
+   win + return (lxterminal)
+   win + w      (firefox)
+   win + e      (thunar)
+   
+<--dmenu atajos-->
+   F1			(dmenu)
+   F2			(menu screenshot)
+   F3			(menu programas)
+   F3			(menu wallpapers)
+   F12		(menu apagar)

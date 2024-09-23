@@ -1,0 +1,103 @@
+# Nombre del menu
+[begin] (Menu)
+[encoding] {UTF-8}
+ 
+# Separador
+      [separator] 
+
+# Buscador
+      [exec] (Buscar programas)     	 	{rofi -show drun -b}
+   
+# Separador
+      [separator] 
+
+# Firefox
+      [exec] (Firefox)				{firefox}
+
+# Gestor de archivos
+      [exec] (Gestor de archivos)		{Thunar}
+      [separator] 
+
+# Submenu internet
+[submenu] (Internet)
+      [separator] 
+	  [exec] (Firefox)						{firefox}
+	  [exec] (Conectarse a internet)		{/usr/local/bin/Wifi}
+      [separator] 
+	  [exec] (Google)					{firefox https://google.com}
+	  [exec] (Github)					{firefox https://github.com}
+	  [exec] (Youtube)					{firefox https://youtube.com}
+	  [exec] (Arch Wiki)				{firefox https://wiki.archlinux.org}
+      [separator] 
+[end]
+
+# Submenu programas
+[submenu] (Programas)
+      [separator] 
+	  [exec] (Calculadora)					{galculator}
+	  [exec] (Captura de pantalla)			{/usr/local/bin/Screenshot}
+	  [exec] (Compresor de archivos)		{xarchiver}
+      [exec] (Editor de texto)				{leafpad}
+	  [exec] (Firefox)						{firefox}
+	  [exec] (Gestor de archivos)       	{Thunar}
+	  [exec] (Gestor de discos)				{lxterminal -e sudo gparted}
+	  [exec] (Grabar pantalla)				{simplescreenrecorder}
+	  [exec] (Reproductor de musica)		{audacious}
+      [exec] (Visor de imagenes)            {mirage}
+      [separator] 
+[end]
+
+# Submenu office
+[submenu] (Libre Office)
+      [separator] 
+      [exec] (Base de datos) 		     	{libreoffice --base}
+      [exec] (Dibujo) 		     			{libreoffice --draw}
+      [exec] (Editor de formulas) 		    {libreoffice --math}
+      [exec] (Exel)		     				{libreoffice --calc}
+      [exec] (PowerPoint)            		{libreoffice --impress}
+      [exec] (Word) 		     			{libreoffice --writer}
+      [separator] 
+[end]
+
+# Personalizar
+[submenu] (Personalizar fluxbox)
+      [separator] 
+		[exec] (Fondo de pantalla)				{/usr/local/bin/Wallpaper}
+		[exec] (Temas programas) {lxappearance}
+		[submenu] (Temas fluxbox) {Choose a style...}
+				[stylesdir] (~/.fluxbox/styles)
+[end]	
+      [separator] 
+[end]
+
+# Submenu Fluxblox menu
+[submenu] (Configuracion del sistema)
+		[separator]
+		[exec] (Administrador de tareas)			{lxterminal -e btop}
+		[exec] (Controlador de bluetooth)			{/usr/local/bin/Bluetooth}
+	  	[exec] (Controlador de volumen)		{pavucontrol}
+		[exec] (Opciones del teclado)			{/usr/local/bin/Teclado}
+		[exec] (Resolucion)					{arandr}			
+		[submenu] (CLI)
+		[separator]
+		[exec] (Cmus) {lxterminal -e cmus}
+		[exec] (Vifm) {lxterminal -e vifm ~/}
+		[exec] (Vim) {lxterminal -e vim}
+		[separator]
+		[end]
+		[separator]
+		[restart] 							(Recargar fluxbox)
+      [separator] 
+[end]
+
+# Separador
+      [separator]
+
+# Submenu Apagar Reiniciar
+		[exec] (Apagar / Reiniciar)			{/usr/local/bin/PowerMenu}
+
+# Separador
+      [separator] 
+
+[endencoding]
+[end]

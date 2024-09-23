@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Cambiar idioma del teclado
+setxkbmap latam
+
+# Programsa de inicio
+~/.fehbg &
+#exec cbatticon &
+#exec nm-applet &
+#exec volumeicon &
+
+# Fluxbox
+exec fluxbox
