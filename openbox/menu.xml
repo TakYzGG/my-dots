@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="internet" label="Internet">
+ <item label="Firefox">
+   <action name="Execute">
+     <command>firefox</command>
+   </action>
+ </item>
+ <item label="Conectarse a internet">
+   <action name="Execute">
+     <command>/usr/local/bin/Wifi</command>
+   </action>
+ </item>
+  <separator />
+ <item label="Google">
+   <action name="Execute">
+     <command>firefox https://google.com</command>
+   </action>
+ </item>
+ <item label="Github">
+   <action name="Execute">
+     <command>firefox https://github.com</command>
+   </action>
+ </item>
+ <item label="Youtube">
+   <action name="Execute">
+     <command>firefox https://youtube.com</command>
+   </action>
+ </item>
+ <item label="Arch Wiki">
+   <action name="Execute">
+     <command>firefox https://wiki.archlinux.org</command>
+   </action>
+ </item>
+</menu>
+
+<menu id="programas" label="Programas">
+ <item label="Calculadora">
+   <action name="Execute">
+     <command>galculator</command>
+   </action>
+ </item>
+ <item label="Captura de pantalla">
+   <action name="Execute">
+     <command>/usr/local/bin/Screenshot</command>
+   </action>
+ </item>
+ <item label="Compresor de archivos">
+   <action name="Execute">
+     <command>xarchiver</command>
+   </action>
+ </item>
+ <item label="Editor de texto">
+   <action name="Execute">
+     <command>leafpad</command>
+   </action>
+ </item>
+ <item label="Firefox">
+   <action name="Execute">
+     <command>firefox</command>
+   </action>
+ </item>
+ <item label="Gestor de archivos">
+   <action name="Execute">
+     <command>thunar</command>
+   </action>
+ </item>
+ <item label="Gestor de discos">
+   <action name="Execute">
+     <command>lxterminal -e sudo gparted</command>
+   </action>
+ </item>
+ <item label="Grabar pantalla">
+   <action name="Execute">
+     <command>simplescreenrecorder</command>
+   </action>
+ </item>
+ <item label="Reproductor de musica">
+   <action name="Execute">
+     <command>audacious</command>
+   </action>
+ </item>
+ <item label="Visor de imagenes">
+   <action name="Execute">
+     <command>mirage</command>
+   </action>
+ </item>
+</menu>
+
+<menu id="office" label="Libre Office">
+ <item label="Base de datos">
+   <action name="Execute">
+     <command>libreoffice --base</command>
+   </action>
+ </item>
+ <item label="Dibujo">
+   <action name="Execute">
+     <command>libreoffice --draw</command>
+   </action>
+ </item>
+ <item label="Editor de formulas">
+   <action name="Execute">
+     <command>libreoffice --math</command>
+   </action>
+ </item>
+ <item label="Exel">
+   <action name="Execute">
+     <command>libreoffice --calc</command>
+   </action>
+ </item>
+ <item label="PowerPoint">
+   <action name="Execute">
+     <command>libreoffice --impress</command>
+   </action>
+ </item>
+ <item label="Word">
+   <action name="Execute">
+     <command>libreoffice --writer</command>
+   </action>
+ </item>
+</menu>
+
+<menu id="personalizar" label="Personalizar openbox">
+ <item label="Fondo de pantalla">
+   <action name="Execute">
+     <command>/usr/local/bin/Wallpaper</command>
+   </action>
+ </item>
+ <item label="Temas programas">
+   <action name="Execute">
+     <command>lxappearance</command>
+   </action>
+ </item>
+ <item label="Temas openbox">
+   <action name="Execute">
+     <command>obconf</command>
+   </action>
+ </item>
+</menu>
+
+<menu id="configuracion" label="Configuracion del sistema">
+ <item label="Administrador de tareas">
+   <action name="Execute">
+     <command>lxterminal -e btop</command>
+   </action>
+ </item>
+ <item label="Controlador de bluetooth">
+   <action name="Execute">
+     <command>/usr/local/bin/Bluetooth</command>
+   </action>
+ </item>
+ <item label="Controlador de volumen">
+   <action name="Execute">
+     <command>pavucontrol</command>
+   </action>
+ </item>
+ <item label="Opciones del teclado">
+   <action name="Execute">
+     <command>/usr/local/bin/Teclado</command>
+   </action>
+ </item>
+ <item label="Resolucion">
+   <action name="Execute">
+     <command>arandr</command>
+   </action>
+ </item>
+  <separator />
+  <item label="Reiniciar openbox">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Menu" />
+  <menu id="programas"/>
+  <menu id="internet"/>
+  <menu id="office"/>
+  <menu id="personalizar"/>
+  <menu id="configuracion"/>
+  <separator />
+ <item label="Apagar / Reiniciar">
+   <action name="Execute">
+     <command>/usr/local/bin/PowerMenu</command>
+   </action>
+ </item>
+</menu>
+
+</openbox_menu>
