@@ -1,0 +1,11 @@
+#/bin/sh
+
+opciones="Apagar\nReiniciar\nCancelar"
+selec=$(echo $opciones | rofi -dmenu -i -p "Power Menu")
+case $selec in
+	Apagar)    password=$(rofi -dmenu -p "Ingresa la contraseña")  
+			   echo $password | sudo -S poweroff ;;
+	Reiniciar) password=$(rofi -dmenu -p "Ingresa la contraseña")
+			   echo $password | sudo -S reboot ;;
+	Cancelar)  exit 0 ;;
+esac

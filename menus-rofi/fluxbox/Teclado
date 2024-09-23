@@ -1,0 +1,33 @@
+#!/bin/sh
+
+opciones="Cambiar idioma\nInvertir Esc/Mayus\nCancelar"
+selec=$(echo $opciones | rofi -dmenu -i -p "Opciones del teclado")
+case $selec in
+	"Cambiar idioma")
+		opciones="Español es\nEspañol la\nIngles\nCancelar"
+		selec=$(echo $opciones | rofi -dmenu -i -p "Elige una opcion:")
+		case $selec in
+			"Español es")
+				setxkbmap es ;;
+			"Español la")
+				setxkbmap latam ;;
+			"Ingles")
+				setxkbmap us ;;
+			Cancelar)
+				exit 0 ;;
+		esac ;;
+
+	"Invertir Esc/Mayus")
+		opciones="Activar\nDesactivar\nCancelar"
+		selec=$(echo $opciones | rofi -dmenu -i -p "Elige una opcion:")
+		case $selec in
+			Activar)
+				setxkbmap -option caps:swapescape ;;
+			Desactivar)
+				setxkbmap -option ;;
+			Cancelar)
+				exit 0 ;;
+		esac ;;
+	Cancelar)
+		exit 0 ;;
+esac

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pdfs="$HOME/PDFs"
+selec=$(find $pdfs -type f -printf "%f\n"| rofi -dmenu -i -p "PDF")
+[ -n "$selec" ] && mupdf "$pdfs/$selec"

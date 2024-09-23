@@ -1,0 +1,13 @@
+#!/bin/sh
+
+opciones="Lxterminal\nPolybar\nCancelar"
+selec=$(echo $opciones | rofi -dmenu -i -p "Themes")
+case $selec in
+	Lxterminal) themes="$HOME/.config/lxterminal/themes"
+				selec=$(find $themes -type f -printf "%f\n"| rofi -dmenu -i -p "Lxterminal Theme selector")
+				[ -n "$selec" ] && cp "$themes/$selec" $HOME/.config/lxterminal/lxterminal.conf ;;
+	Polybar) themes="$HOME/.config/polybar/themes"
+			 selec=$(find $themes -type f -printf "%f\n"| rofi -dmenu -i -p "Polybar Theme selector")
+			 [ -n "$selec" ] && cp "$themes/$selec" $HOME/.config/polybar/config.ini ;;
+	Cancelar)  exit 0 ;;
+esac
