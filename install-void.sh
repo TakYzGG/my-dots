@@ -10,9 +10,9 @@ fi
 # Variables
 kernelversion=$(uname -r | awk -F. '{print $1"."$2}')
 zramp=https://raw.githubusercontent.com/TakYzGG/Void-Linux/main/Utilidades/zram
-zshrc=
-bashrc=
-xinitrc=
+zshrc=https://raw.githubusercontent.com/TakYzGG/my-dots/main/.zshrc
+bashrc=https://raw.githubusercontent.com/TakYzGG/my-dots/main/.bashrc
+xinitrc=https://raw.githubusercontent.com/TakYzGG/my-dots/main/.xinitrc
 
 # Inicio del script
 echo "Hola! Bienvenido al script post-install para void linux"
