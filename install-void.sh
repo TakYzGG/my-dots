@@ -68,28 +68,28 @@ esac
 
 # Instalar wm
 case $wm in
-	1) xbps-install -y i3 i3-gaps lxterminal polybar feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance 
+	1) xbps-install -y i3 i3-gaps lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance 
 	   git clone https://github.com/TakYzGG/my-dots
 	   cp -r my-dots/rofi/* 							/usr/share/rofi/themes
 	   cp -r my-dots/menus-rofi/i3/*					/usr/local/bin
 	   chmod +x 										/usr/local/bin/*
 	   cp -r my-dots/fonts/*							/usr/share/fonts 
 	   mv my-dots/postinstall/i3wm.sh					../.. ;;
-	2) xbps-install -y bspwm sxhkd lxterminal polybar feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
+	2) xbps-install -y bspwm sxhkd lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
 	   git clone https://github.com/TakYzGG/my-dots
 	   cp -r my-dots/rofi/* 							/usr/share/rofi/themes
 	   cp -r my-dots/menus-rofi/bspwm/*					/usr/local/bin
 	   chmod +x 										/usr/local/bin/*
 	   cp -r my-dots/fonts/*							/usr/share/fonts
 	   mv my-dots/postinstall/bspwm.sh					../.. ;;
-	3) xbps-install -y fluxbox lxterminal polybar feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
+	3) xbps-install -y fluxbox lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
 	   git clone https://github.com/TakYzGG/my-dots
 	   cp -r my-dots/rofi/* 							/usr/share/rofi/themes
 	   cp -r my-dots/menus-rofi/fluxbox/*				/usr/local/bin
 	   chmod +x 										/usr/local/bin/*
 	   cp -r my-dots/fonts/*							/usr/share/fonts
 	   mv my-dots/postinstall/fluxbox.sh				../.. ;;
-	4) xbps-install -y openbox obconf lxterminal polybar feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
+	4) xbps-install -y openbox obconf lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
 	   git clone https://github.com/TakYzGG/my-dots
 	   cp -r my-dots/rofi/* 							/usr/share/rofi/themes
 	   cp -r my-dots/menus-rofi/openbox/*				/usr/local/bin
@@ -107,6 +107,7 @@ case $nav in
 	3) xbps-install -y midori ;;
 	4) echo "No se eligio ningun navegador" ;;
 	*) echo "Respuesta no valida"
+esac
 
 # Instalar controladores de bluetooth
 if [ "$bluetooth" = "s" ]; then
@@ -169,11 +170,12 @@ esac
 
 # Configurar bash / zsh
 if [ "$zsh" = "s" ]; then
+	rm /home/$user/.zshrc
 	wget $zshrc
 	cp .zshrc /home/$user
 	cp .zshrc /root
 else
-	rm -rf /home/$usuario/.bashrc
+	rm -rf /home/$user/.bashrc
 	rm -rf /root/.bashrc
 	wget $bashrc
 	cp .bashrc /home/$user
@@ -192,7 +194,8 @@ ln -s /etc/sv/dbus						/var/service
 ln -s /etc/sv/alsa						/var/service
 # Bluetooth
 if [ "$bluetooth" = "s" ]; then
-	ln -s /etc/sv/bluemand				/var/service
+	ln -s /etc/sv/bluetoothd			/var/service
+	sv enable bluetoothd
 fi
 # Acpi
 if [ "$portatil" = "s" ]; then
