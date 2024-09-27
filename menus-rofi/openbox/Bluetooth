@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Función para obtener el estado del Bluetooth (activado o desactivado)
+get_bluetooth_status() {
+    bluetoothctl show | grep -q "Powered: yes" && echo "Activado" || echo "Desactivado"
+}
+
+# Mostrar el menú con opciones para activar/desactivar Bluetooth y listar dispositivos
+options="Activar Bluetooth\nDesactivar Bluetooth\nDispositivos Bluetooth"
+chosen_option=$(echo "$options" | rofi -dmenu -p "Bluetooth - $(get_bluetooth_status)")
+
+# Tomar acción dependiendo de la opción seleccionada
+case "$chosen_option" in
+    "Activar Bluetooth")
+        bluetoothctl power on
+        ;;
+    "Desactivar Bluetooth")
+        bluetoothctl power off
+        ;;
+    "Dispositivos Bluetooth")
+        # Escanear dispositivos Bluetooth disponibles
+        devices=$(bluetoothctl devices | awk '{print $2 " " substr($0, index($0,$3))}')
+
+        # Mostrar el menú con los dispositivos y guardar la selección
+        selected_device=$(echo "$devices" | rofi -dmenu -p "Seleccionar dispositivo Bluetooth" | awk '{print $1}')
+
+        # Si el usuario selecciona un dispositivo
+        if [ -n "$selected_device" ]; then
+            # Intentar conectar al dispositivo seleccionado
+            bluetoothctl connect "$selected_device"
+        fi
+        ;;
+esac
