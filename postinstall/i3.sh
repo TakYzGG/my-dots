@@ -11,6 +11,7 @@ rm -rf /home/$user/.config/i3 /home/$user/.config/polybar /home/$user/.config/lx
 cp -r my-dots/i3 							/home/$user/.config
 cp -r my-dots/polybar 						/home/$user/.config 
 cp -r my-dots/lxterminal 					/home/$user/.config
+cp -r fastfetch								/home/$user/.config
 cp -r my-dots/vifm							/home/$user/.config
 cp -r my-dots/vim/*							/home/$user
 cp -r my-dots/Wallpaper/*					/home/$user

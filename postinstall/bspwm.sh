@@ -14,6 +14,7 @@ chmod +x 									/home/$user/.config/bspwm/themes/*
 cp -r my-dots/bspwm/sxhkd					/home/$user/.config
 cp -r my-dots/polybar 						/home/$user/.config 
 cp -r my-dots/lxterminal 					/home/$user/.config
+cp -r fastfetch								/home/$user/.config
 cp -r my-dots/vifm							/home/$user/.config
 cp -r my-dots/vim/*							/home/$user
 cp -r my-dots/Wallpaper/*					/home/$user

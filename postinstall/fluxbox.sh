@@ -12,6 +12,7 @@ mkdir 										/home/$user/.fluxbox
 cp -r my-dots/fluxbox/* 					/home/$user/.fluxbox
 chmod +x									/home/$user/.fluxbox/startup
 cp -r my-dots/lxterminal 					/home/$user/.config
+cp -r fastfetch								/home/$user/.config
 cp -r my-dots/vifm							/home/$user/.config
 cp -r my-dots/vim/*							/home/$user
 cp -r my-dots/Wallpaper/*					/home/$user
