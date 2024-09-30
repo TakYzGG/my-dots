@@ -54,7 +54,7 @@ xbps-install -Suy
 xbps-install -y void-repo-multilib
 
 # Descargar paquetes
-xbps-install -y xorg git wget xclip vim-x11 python3 alsa-utils pulseaudio pulseaudio-utils arc-theme papirus-icon-theme gcc make pkg-config binutils glibc-devel libX11-devel libXft-devel libXrender-devel libXinerama-devel xz zip unzip p7zip exfat-utils
+xbps-install -y xorg git wget xclip vim-x11 python3 net-tools alsa-utils pulseaudio pulseaudio-utils arc-theme papirus-icon-theme gcc make pkg-config binutils glibc-devel libX11-devel libXft-devel libXrender-devel libXinerama-devel xz zip unzip p7zip exfat-utils
 if [ "$install" -eq 2 ]; then
 	xbps-install -y ssr btop galculator mupdf mirage arandr leafpad gparted xarchiver Thunar thunar-volman thunar-archive-plugin pavucontrol mpv audacious lxappearance
 fi
