@@ -18,7 +18,8 @@ chmod +x									/home/$user/.fluxbox/startup
 cp -r my-dots/lxterminal 					/home/$user/.config
 cp -r my-dots/fastfetch						/home/$user/.config
 cp -r my-dots/vifm							/home/$user/.config
-cp -r my-dots/vim/*							/home/$user
+cp -r my-dots/vim/.vim						/home/$user
+cp -r my-dots/vim/.vimrc					/home/$user
 cp -r my-dots/Wallpaper/					/home/$user
 rm -rf my-dots/
 
