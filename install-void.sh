@@ -121,7 +121,7 @@ fi
 
 # Instalar controladores de wifi
 if [ "$wifi" = "s" ]; then
-	xbps-install -y NetworkManager
+	xbps-install -y connman
 fi
 
 # Instalar libreoffice
@@ -203,8 +203,8 @@ if [ "$portatil" = "s" ]; then
 fi
 # Network Manager
 if [ "$wifi" = "s" ]; then
-	ln -s /etc/sv/NetworkManager		/var/service
-	sv enable NetworkManager
+	ln -s /etc/sv/connmand				/var/service
+	sv enable connmand
 fi
 # Lxdm
 if [ "$init" -eq 1 ]; then
