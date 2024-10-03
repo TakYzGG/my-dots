@@ -1,7 +1,11 @@
 # <-Configuracion de Zsh->
 
 # Pront
-PROMPT="[%F{magenta}%n%f %F{blue}%~%f]%F{red}$%f "
+if [[ $(whoami) != "root" ]]; then
+	PROMPT="[%F{magenta}%n%f %F{blue}%~%f]%F{red}$%f "
+else 
+	PROMPT="[%F{magenta}%n%f %F{blue}%~%f]%F{red}#%f "
+fi
 
 # <-Alias->
 # Colores

@@ -155,15 +155,15 @@ fi
 # Instalar verion del kernel y eliminar la por defecto
 case $kernel in
 	1) echo "Se usara el kernel $kernelversion.x" ;;
-	2) xbps-install -y linux5.15
+	2) xbps-install -y linux5.15 linux-firmware
 	   xbps-remove -RFfy linux$kernelversion && vkpurge rm all ;;
-	3) xbps-install -y linux5.10
+	3) xbps-install -y linux5.10 linux-firmware
 	   xbps-remove -RFfy linux$kernelversion && vkpurge rm all ;;
-	4) xbps-install -y linux5.4
+	4) xbps-install -y linux5.4 linux-firmware
 	   xbps-remove -RFfy linux$kernelversion && vkpurge rm all ;;
-	5) xbps-install -y linux4.19
+	5) xbps-install -y linux4.19 linux-firmware
 	   xbps-remove -RFfy linux$kernelversion && vkpurge rm all ;;
-	6) xbps-install -y linux-lts
+	6) xbps-install -y linux-lts linux-firmware
 	   xbps-remove -RFfy linux$kernelversion && vkpurge rm all ;;
 	*) echo "Respuesta no valida" ;;
 esac

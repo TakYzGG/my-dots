@@ -11,9 +11,9 @@ alias lla='ls -la'
 alias lsa='ls -a'
 
 # Mejoras de uso
-alias rm='-iv'
-alias mv='-iv'
-alias cp='-iv'
+alias rm='rm -iv'
+alias mv='mv -iv'
+alias cp='cp -iv'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias mkdir='mkdir -pv'
