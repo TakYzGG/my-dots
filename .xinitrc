@@ -7,4 +7,4 @@
 #exec i3
 #exec bspwm
 #exec openbox-session
-#exec fluxbox
+#exec startfluxbox
