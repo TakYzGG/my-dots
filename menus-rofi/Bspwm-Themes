@@ -5,22 +5,34 @@ selec=$(echo $opciones | rofi -dmenu -i -p "Selector de temas")
 case $selec in
 	Dracula) cp $HOME/.config/bspwm/themes/dracula.sh $HOME/.config/bspwm/theme.sh
 			 cp $HOME/.config/polybar/themes/dracula.ini $HOME/.config/polybar/config.ini
-			 cp $HOME/.config/lxterminal/themes/dracula.conf $HOME/.config/lxterminal/lxterminal.conf ;;
+			 cp $HOME/.config/lxterminal/themes/dracula.conf $HOME/.config/lxterminal/lxterminal.conf
+			 cp $HOME/.vim/colors/dracula.vim $HOME/.vim/colors/theme.vim
+			 ;;
 	Gruvbox) cp $HOME/.config/bspwm/themes/gruvbox.sh $HOME/.config/bspwm/theme.sh
 			 cp $HOME/.config/polybar/themes/gruvbox.ini $HOME/.config/polybar/config.ini
-			 cp $HOME/.config/lxterminal/themes/gruvbox.conf $HOME/.config/lxterminal/lxterminal.conf ;;
+			 cp $HOME/.config/lxterminal/themes/gruvbox.conf $HOME/.config/lxterminal/lxterminal.conf
+			 cp $HOME/.vim/colors/gruvbox.vim $HOME/.vim/colors/theme.vim
+			 ;;
 	Minimal) cp $HOME/.config/bspwm/themes/minimal.sh $HOME/.config/bspwm/theme.sh
 			 cp $HOME/.config/polybar/themes/minimal.ini $HOME/.config/polybar/config.ini
-			 cp $HOME/.config/lxterminal/themes/minimal.conf $HOME/.config/lxterminal/lxterminal.conf ;;
+			 cp $HOME/.config/lxterminal/themes/minimal.conf $HOME/.config/lxterminal/lxterminal.conf
+			 cp $HOME/.vim/colors/minimal.vim $HOME/.vim/colors/theme.vim
+			 ;;
 	Murz)	 cp $HOME/.config/bspwm/themes/murz.sh $HOME/.config/bspwm/theme.sh
 			 cp $HOME/.config/polybar/themes/murz.ini $HOME/.config/polybar/config.ini
-			 cp $HOME/.config/lxterminal/themes/murz.conf $HOME/.config/lxterminal/lxterminal.conf ;;
+			 cp $HOME/.config/lxterminal/themes/murz.conf $HOME/.config/lxterminal/lxterminal.conf
+			 cp $HOME/.vim/colors/murz.vim $HOME/.vim/colors/theme.vim
+			 ;;
 	Nord)    cp $HOME/.config/bspwm/themes/nord.sh $HOME/.config/bspwm/theme.sh
 			 cp $HOME/.config/polybar/themes/nord.ini $HOME/.config/polybar/config.ini
-			 cp $HOME/.config/lxterminal/themes/nord.conf $HOME/.config/lxterminal/lxterminal.conf ;;
+			 cp $HOME/.config/lxterminal/themes/nord.conf $HOME/.config/lxterminal/lxterminal.conf
+			 cp $HOME/.vim/colors/nord.vim $HOME/.vim/colors/theme.vim
+			 ;;
 	Onedark) cp $HOME/.config/bspwm/themes/onedark.sh $HOME/.config/bspwm/theme.sh
 			 cp $HOME/.config/polybar/themes/onedark.ini $HOME/.config/polybar/config.ini
-			 cp $HOME/.config/lxterminal/themes/onedrak.conf $HOME/.config/lxterminal/lxterminal.conf ;;
+			 cp $HOME/.config/lxterminal/themes/onedrak.conf $HOME/.config/lxterminal/lxterminal.conf
+			 cp $HOME/.vim/colors/onedark.vim $HOME/.vim/colors/theme.vim
+			 ;;
 	Cancelar)
 		exit 0 ;;
 esac

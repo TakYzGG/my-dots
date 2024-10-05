@@ -1,15 +1,14 @@
 #!/bin/sh
 
 # Escanea las redes Wi-Fi disponibles y extrae los SSIDs y la seguridad
-networks=$(nmcli -t -f SSID,SECURITY device wifi list | awk -F: '!seen[$1]++ {print $1 ":" $2}')
+networks=$(connmanctl scan wifi)
 
 # Muestra el menú con rofi y guarda la selección
-selected_network=$(echo "$networks" | awk -F: '{print $1}' | rofi -dmenu -p "Wi-Fi")
+selected_network=$(echo "$networks" | rofi -dmenu -p "Wi-Fi")
+#| awk -F: '{print $1}'
 
 # Si el usuario selecciona una red
 if [ -n "$selected_network" ]; then
-    # Obtiene la seguridad de la red seleccionada
-    security=$(echo "$networks" | grep "^$selected_network" | awk -F: '{print $2}')
     
     # Si la red tiene seguridad (no es una red abierta)
     if [ "$security" != "--" ]; then
@@ -18,12 +17,12 @@ if [ -n "$selected_network" ]; then
 
         # Conectar a la red seleccionada con contraseña
         if [ -n "$wifi_password" ]; then
-            nmcli device wifi connect "$selected_network" password "$wifi_password"
+			connmanctl connect "$selected_network" password "$wifi_password"
         else
             echo "Contraseña vacía, no se pudo conectar."
         fi
     else
         # Conectar a la red abierta
-        nmcli device wifi connect "$selected_network"
+        connmanctl connect "$selected_network"
     fi
 fi
