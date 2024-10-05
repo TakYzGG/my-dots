@@ -29,4 +29,5 @@ inoremap " ""<Left>
 
 "" Personalizacion
 syntax on
-colorscheme nord
+set termguicolors
+colorscheme theme
