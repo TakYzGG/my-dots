@@ -23,6 +23,10 @@ read -p "¿Cual es tu nombre de usuario?: " user
 read -p "¿Quieres añadir los repocitorios non-free? (s/n): " nonfree
 echo "¿Que tipo de instalacion quieres hacer?\n[1] Minima\n[2] Completa"
 read -p "¿Cual quieres usar?: " install 
+read -p "¿Quieres instalar herramientas de compilacion? (s/n): " compilacion
+echo "¿Que editor de codigo quieres usar?\n[1] Default (Vim)\n[2] Emacs\n[3] VS code"
+read -p "¿Cual quieres usar?: " editor
+read -p "¿Quieres descargar temas gtk? (s/n): " temas
 echo "Elige un gestor de sesion:\n[1] Xinit\n[2] Lxdm"
 read -p "¿Cual quieres usar?: " init
 echo "Elige un Windows Manager:\n[1] I3wm\n[2] Bspwm\n[3] Fluxbox\n[4] Openbox\n[5] Ninguno"
@@ -40,6 +44,9 @@ read -p "¿Cual quieres usar?: " kernel
 
 # Hacer minusculas todas las respuestas
 nonfree=$(echo "$nonfree" | tr '[:upper:]' '[:lower:]')
+compilacion=$(echo "$compilacion" | tr '[:upper:]' '[:lower:]')
+editor=$(echo "$editor" | tr '[:upper:]' '[:lower:]')
+temas=$(echo "$temas" | tr '[:upper:]' '[:lower:]')
 wifi=$(echo "$wifi" | tr '[:upper:]' '[:lower:]')
 bluetooth=$(echo "$bluetooth" | tr '[:upper:]' '[:lower:]')
 portatil=$(echo "$portatil" | tr '[:upper:]' '[:lower:]')
@@ -54,9 +61,27 @@ xbps-install -Suy
 xbps-install -y void-repo-multilib
 
 # Descargar paquetes
-xbps-install -y xorg git wget xclip vim-x11 python3 net-tools alsa-utils pulseaudio pulseaudio-utils arc-theme papirus-icon-theme gcc make pkg-config binutils glibc-devel libX11-devel libXft-devel libXrender-devel libXinerama-devel xz zip unzip p7zip exfat-utils
+xbps-install -y xorg git wget xclip vim-x11 python3 net-tools alsa-utils pulseaudio pulseaudio-utils xz zip unzip p7zip exfat-utils
 if [ "$install" -eq 2 ]; then
 	xbps-install -y ssr btop galculator mupdf mirage arandr leafpad gparted xarchiver Thunar thunar-volman thunar-archive-plugin pavucontrol mpv audacious lxappearance
+fi
+
+# Herramientas de compilacion
+if [ "$compilacion" = "s" ]; then
+	xbps-install -y gcc make pkg-config binutils glibc-devel libX11-devel libXft-devel libXrender-devel libXinerama-devel 
+fi
+
+# Instalar editor de codigo
+case $init in
+	1) echo "Editor: Vim" ;;
+	2) xbps-install -y emacs ;;
+	3) xbps-install -y vscode ;;
+	*) echo "Respuesta no valida" ;;
+esac
+
+# Temas
+if [ "$temas" = "s" ]; then
+	xbps-install -y arc-theme papirus-icon-theme
 fi
 
 # Instalar xinit / lxdm
@@ -201,7 +226,7 @@ fi
 if [ "$portatil" = "s" ]; then
 	ln -s /etc/sv/acpid					/var/service
 fi
-# Network Manager
+# Connman
 if [ "$wifi" = "s" ]; then
 	ln -s /etc/sv/connmand				/var/service
 	sv enable connmand
