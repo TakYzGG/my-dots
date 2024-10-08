@@ -61,7 +61,7 @@ xbps-install -Suy
 xbps-install -y void-repo-multilib
 
 # Descargar paquetes
-xbps-install -y xorg git wget xclip vim-x11 python3 net-tools alsa-utils pulseaudio pulseaudio-utils xz zip unzip p7zip exfat-utils
+xbps-install -y xorg git wget xclip vim-x11 python3 net-tools alsa-utils pulseaudio pulseaudio-utils pamixer xz zip unzip p7zip exfat-utils
 if [ "$install" -eq 2 ]; then
 	xbps-install -y ssr btop galculator mupdf mirage arandr leafpad gparted xarchiver Thunar thunar-volman thunar-archive-plugin pavucontrol mpv audacious lxappearance
 fi
