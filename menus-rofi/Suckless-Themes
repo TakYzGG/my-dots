@@ -1,0 +1,32 @@
+#!/bin/sh
+
+opciones="Dracula\nGruvbox\nMinimal\nMurz\nNord\nOnedark\nCancelar"
+selec=$(echo $opciones | rofi -dmenu -i -p "Selector de temas")
+case $selec in
+	Dracula) cp $HOME/.suckless/dracula $HOME/.Xresources
+			 cp $HOME/.vim/colors/dracula.vim $HOME/.vim/colors/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Gruvbox) cp $HOME/.suckless/gruvbox $HOME/.Xresources
+			 cp $HOME/.vim/colors/gruvbox.vim $HOME/.vim/colors/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Minimal) cp $HOME/.suckless/minimal $HOME/.Xresources
+			 cp $HOME/.vim/colors/minimal.vim $HOME/.vim/colors/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Murz)	 cp $HOME/.suckless/murz $HOME/.Xresources
+			 cp $HOME/.vim/colors/murz.vim $HOME/.vim/colors/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Nord)    cp $HOME/.suckless/nord $HOME/.Xresources
+			 cp $HOME/.vim/colors/nord.vim $HOME/.vim/colors/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Onedark) cp $HOME/.suckless/onedark $HOME/.Xresources
+			 cp $HOME/.vim/colors/onedark.vim $HOME/.vim/colors/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Cancelar)
+		exit 0 ;;
+esac
