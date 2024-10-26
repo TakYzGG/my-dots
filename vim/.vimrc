@@ -7,6 +7,7 @@ set shiftwidth=4
 set smartindent
 set nowrap
 set clipboard=unnamedplus
+set linespace=0
 
 "" No crear archivos de respaldo
 set nobackup
