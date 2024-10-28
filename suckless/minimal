@@ -1,3 +1,4 @@
+! St (Simple terminal)
 ! Theme: Minimal
 ! Fondo y primer plano
 st.background:  #151515
@@ -21,12 +22,6 @@ st.color12:  #2979ff
 st.color13:  #d500f9
 st.color14:  #00e5ff
 st.color15:  #ffffff
-!st.color10: #69FF94
-!st.color11: #FFFFA5
-!st.color12: #D6ACFF
-!st.color13: #FF92D0
-!st.color14: #A4FFFF
-!st.color15: #FFFFFF
 
 ! Otros ajustes
 st.font:      UbuntuMono Nerd Font Mono:size=12
@@ -35,3 +30,10 @@ st.blinktimeout:  800
 st.bellvolume:    0
 st.tabspaces:     4
 st.borderpx:      2
+
+! Dmenu
+dmenu.font : UbuntuMono Nerd Font Mono:size=10
+dmenu.background : #151515
+dmenu.foreground : #ffffff
+dmenu.selbackground : #ffffff
+dmenu.selforeground : #151515

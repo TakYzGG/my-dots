@@ -1,3 +1,4 @@
+! St (Simple terminal)
 ! Theme: Gruvbox
 ! Fondo y primer plano
 st.background:  #282828
@@ -29,3 +30,10 @@ st.blinktimeout:  800
 st.bellvolume:    0
 st.tabspaces:     4
 st.borderpx:      2
+
+! Dmenu
+dmenu.font : UbuntuMono Nerd Font Mono:size=10
+dmenu.background : #282828
+dmenu.foreground : #ebdbb2
+dmenu.selbackground : #ebdbb2
+dmenu.selforeground : #282828
