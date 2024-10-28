@@ -1,0 +1,33 @@
+#!/bin/sh
+
+opciones="Dracula\nGruvbox\nMinimal\nNord\nOnedark\nCancelar"
+selec=$(echo $opciones | dmenu -i -p "Selector de temas")
+case $selec in
+	Dracula) cp $HOME/.suckless/dracula $HOME/.Xresources
+			 cp $HOME/.vim/colors/dracula.vim $HOME/.vim/colors/theme.vim
+			 cp $HOME/.vim/plugged/lightline.vim/autoload/lightline/my-themes/dracula.vim $HOME/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Gruvbox) cp $HOME/.suckless/gruvbox $HOME/.Xresources
+			 cp $HOME/.vim/colors/gruvbox.vim $HOME/.vim/colors/theme.vim
+			 cp $HOME/.vim/plugged/lightline.vim/autoload/lightline/my-themes/gruvbox.vim $HOME/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Minimal) cp $HOME/.suckless/minimal $HOME/.Xresources
+			 cp $HOME/.vim/colors/minimal.vim $HOME/.vim/colors/theme.vim
+			 cp $HOME/.vim/plugged/lightline.vim/autoload/lightline/my-themes/minimal.vim $HOME/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Nord)    cp $HOME/.suckless/nord $HOME/.Xresources
+			 cp $HOME/.vim/colors/nord.vim $HOME/.vim/colors/theme.vim
+			 cp $HOME/.vim/plugged/lightline.vim/autoload/lightline/my-themes/nord.vim $HOME/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Onedark) cp $HOME/.suckless/onedark $HOME/.Xresources
+			 cp $HOME/.vim/colors/onedark.vim $HOME/.vim/colors/theme.vim
+			 cp $HOME/.vim/plugged/lightline.vim/autoload/lightline/my-themes/onedark.vim $HOME/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/theme.vim
+		 	 xrdb -merge ~/.Xresources
+			 ;;
+	Cancelar)
+		exit 0 ;;
+esac
