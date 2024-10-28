@@ -8,6 +8,7 @@ set smartindent
 set nowrap
 set clipboard=unnamedplus
 set linespace=0
+set laststatus=2
 
 "" No crear archivos de respaldo
 set nobackup
@@ -32,3 +33,12 @@ inoremap " ""<Left>
 syntax on
 set termguicolors
 colorscheme theme
+
+"" Plugins
+
+"" Plugin lightline.vim
+call plug#begin('~/.vim/plugged')  " Define el directorio donde se guardarán los plugins
+	Plug 'itchyny/lightline.vim'       " Especifica el plugin a instalar
+call plug#end()                    " Finaliza la lista de plugins
+"" Config lightline.vim
+let g:lightline = { 'colorscheme': 'theme' }
