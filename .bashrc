@@ -3,6 +3,9 @@
 # Pront
 PS1='[\[\e[95m\]\u\[\e[94m\] \w\[\e[0m\]]\[\e[91m\]\\$\[\e[0m\] ' 
 
+# Terminal
+export TERM=xterm-256color
+
 # <-Alias->
 # Colores
 alias ls='ls --color=auto'
