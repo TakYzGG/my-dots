@@ -7,6 +7,9 @@ else
 	PROMPT="[%F{magenta}%n%f %F{blue}%~%f]%F{red}#%f "
 fi
 
+# Terminal
+export TERM=xterm-256color
+
 # <-Alias->
 # Colores
 alias ls='ls --color=auto'
