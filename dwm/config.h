@@ -20,17 +20,13 @@ static char normfgcolor[]       	= "#bbbbbb";
 static char selfgcolor[]        	= "#eeeeee";
 static char selbordercolor[]    	= "#005577";
 static char selbgcolor[]        	= "#005577";
-static char primarycolor[]      	= "#94628a"; /* dark emphasis  */
-static char secondarycolor[]    	= "#b48ead"; /* light emphasis */
 static char *colors[][3] = {
-/*                   fg              bg            border   */
-    [SchemeStatus]   = { normfgcolor,    normbgcolor,  normbordercolor },
     [SchemeNorm]     = { normfgcolor,    normbgcolor,  normbordercolor },
-    [SchemeSel]      = { selfgcolor,     primarycolor, primarycolor    },
-    [SchemeTagsSel]  = { secondarycolor, selbgcolor,   "#000000" }, /* Tagbar left selected {text,background,not used but cannot be empty} */
+    [SchemeSel]      = { selfgcolor,     selbgcolor,   selbordercolor }, // Usando solo los colores especificados
+    [SchemeTagsSel]  = { selfgcolor,     selbgcolor,   "#000000" }, /* Tagbar left selected {text,background,not used but cannot be empty} */
     [SchemeTagsNorm] = { normfgcolor,    normbgcolor,  "#000000" }, /* Tagbar left unselected {text,background,not used but cannot be empty} */
-    [SchemeInfoSel]  = { selfgcolor,     primarycolor, "#000000" }, /* infobar middle  selected {text,background,not used but cannot be empty} */
-    [SchemeInfoNorm] = { normfgcolor,    normbgcolor,  "#000000" }, /* infobar middle  unselected {text,background,not used but cannot be empty} */
+    [SchemeInfoSel]  = { selfgcolor,     selbgcolor,   "#000000" }, /* infobar middle selected {text,background,not used but cannot be empty} */
+    [SchemeInfoNorm] = { normfgcolor,    normbgcolor,  "#000000" }, /* infobar middle unselected {text,background,not used but cannot be empty} */
 };
 
 /* tagging */
