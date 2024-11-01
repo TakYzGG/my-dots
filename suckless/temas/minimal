@@ -1,0 +1,68 @@
+! Theme: Minimal
+
+! Dwm
+! Colores
+dwm.normbgcolor: #151515
+dwm.normfgcolor: #ffffff
+dwm.normbordercolor: #151515
+dwm.selbgcolor: #ffffff
+dwm.selfgcolor: #151515
+dwm.selbordercolor: #ffffff
+
+! Tamaños y ajustes
+dwm.borderpx:          2
+dwm.snap:              32
+dwm.gappih:            2
+dwm.gappiv:   		   2
+dwm.gappoh:   		   2
+dwm.gappov:  		   2
+dwm.smartgaps:         0
+dwm.user_bh:           17
+dwm.showbar:           1
+dwm.topbar:            1
+dwm.nmaster:           1
+dwm.resizehints:       1
+dwm.mfact:             0.5
+
+! Fuentes
+dwm.font:              UbuntuMono Nerd Font Mono:size=12
+dwm.dmenufont:         UbuntuMono Nerd Font Mono:size=12
+
+! St (Simple terminal)
+! Fondo y primer plano
+st.background:  #151515
+st.foreground:  #ffffff
+st.cursorColor: #ffffff
+
+! Colores del 0 al 15
+st.color0:  #151515
+st.color1:  #ff1744
+st.color2:  #00e676
+st.color3:  #ffea00
+st.color4:  #2979ff
+st.color5:  #d500f9
+st.color6:  #00e5ff
+st.color7:  #ffffff
+st.color8:  #232323
+st.color9:  #ff1744
+st.color10:  #00e676
+st.color11:  #ffea00
+st.color12:  #2979ff
+st.color13:  #d500f9
+st.color14:  #00e5ff
+st.color15:  #ffffff
+
+! Otros ajustes
+st.font:      UbuntuMono Nerd Font Mono:size=12
+st.termname:  st-256color
+st.blinktimeout:  800
+st.bellvolume:    0
+st.tabspaces:     4
+st.borderpx:      2
+
+! Dmenu
+dmenu.font : UbuntuMono Nerd Font Mono:size=10
+dmenu.background : #151515
+dmenu.foreground : #ffffff
+dmenu.selbackground : #ffffff
+dmenu.selforeground : #151515
