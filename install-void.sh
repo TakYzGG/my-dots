@@ -23,13 +23,12 @@ read -p "¿Cual es tu nombre de usuario?: " user
 read -p "¿Quieres añadir los repocitorios non-free? (s/n): " nonfree
 echo "¿Que tipo de instalacion quieres hacer?\n[1] Minima\n[2] Completa"
 read -p "¿Cual quieres usar?: " install 
-read -p "¿Quieres instalar herramientas de compilacion? (s/n): " compilacion
 echo "¿Que editor de codigo quieres usar?\n[1] Default (Vim)\n[2] Emacs\n[3] VS code"
 read -p "¿Cual quieres usar?: " editor
 read -p "¿Quieres descargar temas gtk? (s/n): " temas
 echo "Elige un gestor de sesion:\n[1] Xinit\n[2] Lxdm"
 read -p "¿Cual quieres usar?: " init
-echo "Elige un Windows Manager:\n[1] I3wm\n[2] Bspwm\n[3] Fluxbox\n[4] Openbox\n[5] Ninguno"
+echo "Elige un Windows Manager:\n[1] Bspwm\n[2] Dwm\n[3] I3wm\n[4] Fluxbox\n[5] Openbox\n[6] Ninguno"
 read -p "¿Cual quieres usar?: " wm
 echo "Elige un navegador web:\n[1] Firefox\n[2] Chromium\n[3] Midori\n[4] Ninguno"
 read -p "¿Cual quieres usar?: " nav
@@ -61,14 +60,9 @@ xbps-install -Suy
 xbps-install -y void-repo-multilib
 
 # Descargar paquetes
-xbps-install -y xorg git wget xclip vim-x11 python3 net-tools alsa-utils pulseaudio pulseaudio-utils pamixer xz zip unzip p7zip exfat-utils
+xbps-install -y xorg git wget xclip vim-x11 python3 net-tools alsa-utils pulseaudio pulseaudio-utils pamixer xz zip unzip p7zip exfat-utils gcc make pkg-config binutils glibc-devel libX11-devel libXft-devel libXrender-devel libXinerama-devel 
 if [ "$install" -eq 2 ]; then
-	xbps-install -y ssr btop galculator mupdf mirage arandr leafpad gparted xarchiver Thunar thunar-volman thunar-archive-plugin pavucontrol mpv audacious lxappearance
-fi
-
-# Herramientas de compilacion
-if [ "$compilacion" = "s" ]; then
-	xbps-install -y gcc make pkg-config binutils glibc-devel libX11-devel libXft-devel libXrender-devel libXinerama-devel 
+	xbps-install -y ssr btop galculator mirage leafpad xarchiver Thunar thunar-volman thunar-archive-plugin pavucontrol mpv audaciousce
 fi
 
 # Instalar editor de codigo
@@ -93,35 +87,41 @@ esac
 
 # Instalar wm
 case $wm in
-	1) xbps-install -y i3 i3-gaps lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance 
-	   git clone https://github.com/TakYzGG/my-dots
-	   cp -r my-dots/rofi/* 							/usr/share/rofi/themes
-	   cp -r my-dots/menus-rofi/i3/*					/usr/local/bin
-	   chmod +x 										/usr/local/bin/*
-	   cp -r my-dots/fonts/*							/usr/share/fonts 
-	   mv my-dots/postinstall/i3wm.sh					../.. ;;
-	2) xbps-install -y bspwm sxhkd lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
+	1) xbps-install -y bspwm sxhkd lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
 	   git clone https://github.com/TakYzGG/my-dots
 	   cp -r my-dots/rofi/* 							/usr/share/rofi/themes
 	   cp -r my-dots/menus-rofi/bspwm/*					/usr/local/bin
 	   chmod +x 										/usr/local/bin/*
 	   cp -r my-dots/fonts/*							/usr/share/fonts
 	   mv my-dots/postinstall/bspwm.sh					../.. ;;
-	3) xbps-install -y fluxbox lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
+	2) xbps-install -y fastfetch feh mpv rofi fzf cmus scrot mupdf arandr gparted lxappearance
+	   git clone https://github.com/TakYzGG/my-dots
+	   cp -r my-dots/menus-dmenu/						/home/$user/.config
+	   chmod +x 										/home/$user/.config/menus-dmenu/*
+	   cp -r my-dots/fonts/*							/usr/share/fonts
+	   mv my-dots/postinstall/dwm.sh					../.. ;;
+	3) xbps-install -y i3 i3-gaps lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance 
+	   git clone https://github.com/TakYzGG/my-dots
+	   cp -r my-dots/rofi/* 							/usr/share/rofi/themes
+	   cp -r my-dots/menus-rofi/i3/*					/usr/local/bin
+	   chmod +x 										/usr/local/bin/*
+	   cp -r my-dots/fonts/*							/usr/share/fonts 
+	   mv my-dots/postinstall/i3wm.sh					../.. ;;
+	4) xbps-install -y fluxbox lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
 	   git clone https://github.com/TakYzGG/my-dots
 	   cp -r my-dots/rofi/* 							/usr/share/rofi/themes
 	   cp -r my-dots/menus-rofi/fluxbox/*				/usr/local/bin
 	   chmod +x 										/usr/local/bin/*
 	   cp -r my-dots/fonts/*							/usr/share/fonts
 	   mv my-dots/postinstall/fluxbox.sh				../.. ;;
-	4) xbps-install -y openbox obconf lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
+	5) xbps-install -y openbox obconf lxterminal polybar fastfetch feh mpv rofi vifm cmus scrot mupdf arandr gparted lxappearance
 	   git clone https://github.com/TakYzGG/my-dots
 	   cp -r my-dots/rofi/* 							/usr/share/rofi/themes
 	   cp -r my-dots/menus-rofi/openbox/*				/usr/local/bin
 	   chmod +x 										/usr/local/bin/*
 	   cp -r my-dots/fonts/*							/usr/share/fonts
 	   mv my-dots/postinstall/openbox.sh				../.. ;;
-	5) echo "No se eligio ningun windows manager" ;;
+	6) echo "No se eligio ningun windows manager" ;;
 	*) echo "Respuesta no valida" ;;
 esac
 
@@ -141,7 +141,7 @@ fi
 
 # Instalar controladores de bateria y brillo
 if [ "$portatil" = "s" ]; then
-	xbps-install -y brightnessctl acpi
+	xbps-install -y light acpi
 fi
 
 # Instalar controladores de wifi
