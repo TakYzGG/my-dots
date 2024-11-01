@@ -11,6 +11,7 @@ read -p "¿Cual es tu nombre de usuario?: " user
 mkdir ~/pkg
 cp -r my-dots/dmenu 						/home/$user/pkg/
 cp -r my-dots/dwm							/home/$user/pkg/
+cp -r my-dots/dwmblocks						/home/$user/pkg/
 cp -r my-dots/st							/home/$user/pkg/
 
 cd home/$user/pkg/dmenu
@@ -21,18 +22,24 @@ cd home/$user/pkg/dwm
 make
 sudo make install clean
 
+cd home/$user/pkg/dwmblocks
+make
+sudo make install clean
+
 cd home/$user/pkg/st
 make
 sudo make install clean
 
 # Mover configuraciones
 mkdir /home/$user/.config
+mkdir /home/$user/.config/dwmblocks
 mkdir /home/$user/.suckless
 mkdir /home/$user/Screenshots
 
 cp -r my-dots/vim/.vim						/home/$user
 cp -r my-dots/vim/.vimrc					/home/$user
 cp -r my-dots/Wallpaper/					/home/$user
-cp my-dots/suckless/*						/home/$user/.suckless
+cp my-dots/suckless/temas					/home/$user/.suckless
+cp my-dots/suckless/dwmblocks				/home/$user/.config/dwmblocks
 
 echo "Termino la configuracion de dwm"
