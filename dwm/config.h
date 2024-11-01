@@ -117,10 +117,10 @@ static const char *termcmd[]  = { "st", NULL };
 #define terminal "st"
 
 // Definir scripts
-#define apagar       "~/.config/scripts/PowerMenu"
-#define pdf          "~/.config/scripts/PDF"
-#define screenshot   "~/.config/scripts/Screenshot"
-#define temas        "~/.config/scripts/Suckless-Themes"
+#define apagar       "~/.config/menus-dmenu/PowerMenu"
+#define pdf          "~/.config/menus-dmenu/PDF"
+#define screenshot   "~/.config/menus-dmenu/Screenshot"
+#define temas        "~/.config/menus-dmenu/Suckless-Themes"
 
 #include "movestack.c"
 static const Key keys[] = {
