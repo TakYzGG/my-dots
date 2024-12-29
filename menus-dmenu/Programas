@@ -1,0 +1,11 @@
+#/bin/sh
+
+opciones="Archivos\nNavegador\nOfimatica\nTerminal"
+selec=$(echo -e $opciones | dmenu -i -p "Programas")
+case $selec in
+	Archivos) thunar ;;
+	Navegador) librewolf ;;
+	Ofimatica) libreoffice ;;
+	Terminal) st ;;
+	Cancelar) exit 0 ;;
+esac
