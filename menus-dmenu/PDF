@@ -1,5 +1,0 @@
-#!/bin/sh
-
-pdfs="$HOME/Descargas $HOME/Documentos"
-selec=$(find $pdfs -type f -name "*.pdf" -printf "%f\n" | dmenu -i -l 10 -p "PDF")
-[ -n "$selec" ] && mupdf -I "$(find $pdfs -type f -name "*.pdf" -path "*$selec")"
