@@ -25,8 +25,8 @@ dwm.resizehints:       1
 dwm.mfact:             0.5
 
 ! Fuentes
-dwm.font:              UbuntuMono Nerd Font Mono:size=12
-dwm.dmenufont:         UbuntuMono Nerd Font Mono:size=12
+dwm.font:              Ubuntu Mono:bold:size=10
+dwm.dmenufont:         Ubuntu Mono:bold:size=9
 
 ! St (Simple terminal)
 ! Fondo y primer plano
@@ -53,7 +53,7 @@ st.color14: #56b6c2
 st.color15: #ffffff
 
 ! Otros ajustes
-st.font:      UbuntuMono Nerd Font Mono:size=12
+st.font:      Ubuntu Mono:bold:size=10
 st.termname:  st-256color
 st.blinktimeout:  800
 st.bellvolume:    0
@@ -61,7 +61,7 @@ st.tabspaces:     4
 st.borderpx:      2
 
 ! Dmenu
-dmenu.font : UbuntuMono Nerd Font Mono:size=10
+dmenu.font : Ubuntu Mono:bold:size=9
 dmenu.background : #282c34
 dmenu.foreground : #98c379
 dmenu.selbackground : #98c379
