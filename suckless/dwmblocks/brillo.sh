@@ -3,7 +3,13 @@
 # Script para mostrar el brillo actual de la pantalla usando light
 
 # Obtener el brillo actual y redondear a un número entero
-current_brightness=$(printf "%.0f" "$(light -G)")
+brillo=$(printf "%.0f" "$(light -G)")
 
 # Mostrar el brillo actual
-echo "Brillo: $current_brightness%"
+if [ $brillo -ge 70 ]; then
+	echo "󰃠 $brillo%"
+elif [ $brillo -ge 30 ]; then
+	echo "󰃟 $brillo%"
+else
+	echo "󰃞 $brillo%"
+fi
