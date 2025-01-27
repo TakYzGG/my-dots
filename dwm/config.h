@@ -16,9 +16,8 @@ static int smartgaps          				= 0;        /* 1 means no outer gap when there
 static const int user_bh 					= 17;   	/*Ajusta el valor según el alto deseado */
 static int showbar            				= 1;        /* 0 means no bar */
 static int topbar             				= 1;        /* 0 means bottom bar */
-static char font[]            		= "UbuntuMono Nerd Font Mono:size=12";
-static char dmenufont[]       		= "UbuntuMono Nerd Font Mono:size=12";
-static const char *fonts[]      	= { font };
+static char font[]                 = "Ubuntu Mono:bold:size=10";
+static char *fonts[]               = { font, "Material Design Icons:size=10" };
 static char normbgcolor[]      		= "#222222";
 static char normbordercolor[]   	= "#444444";
 static char normfgcolor[]       	= "#bbbbbb";
@@ -92,8 +91,7 @@ static const Layout layouts[] = {
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-		{ "font",               STRING,  &font },
-		{ "dmenufont",          STRING,  &dmenufont },
+ { "font",                    STRING,  &font },
 		{ "normbgcolor",        STRING,  &normbgcolor },
 		{ "normbordercolor",    STRING,  &normbordercolor },
 		{ "normfgcolor",        STRING,  &normfgcolor },
@@ -108,11 +106,6 @@ ResourcePref resources[] = {
 		{ "resizehints",       	INTEGER, &resizehints },
 		{ "mfact",      	 	FLOAT,   &mfact },
 };
-
-/* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "st", NULL };
 
 #include "movestack.c"
 static const Key keys[] = {
