@@ -1,0 +1,5 @@
+#!/bin/sh
+
+AppImage="$HOME/AppImage"
+selec=$(find $AppImage -type f -printf "%f\n"| dmenu -i -p "AppImage")
+[ -n "$selec" ] && "$AppImage/$selec"

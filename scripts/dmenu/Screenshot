@@ -1,0 +1,10 @@
+#!/bin/sh
+
+opciones="Todo\nVentana\nSeleccion\nCancelar"
+selec=$(echo $opciones | dmenu -i -p "Screenshot")
+case $selec in
+	Todo) 	   scrot ~/Screenshots/%Y-%m-%d_%H-%M-%S.png ;;
+	Ventana)   scrot -u ~/Screenshots/%Y-%m-%d_%H-%M-%S.png ;;
+	Seleccion) scrot -s ~/Screenshots/%Y-%m-%d_%H-%M-%S.png ;;
+	Cancelar)  exit 0;;
+esac

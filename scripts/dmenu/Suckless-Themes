@@ -1,0 +1,38 @@
+#!/bin/sh
+
+opciones="Dracula\nGruvbox\nMinimal\nNord\nOnedark\nCancelar"
+selec=$(echo $opciones | dmenu -i -p "Selector de temas")
+case $selec in
+	Dracula) cp $HOME/.config/themes/dracula $HOME/.Xresources
+			 cp $HOME/.config/nvim/lua/themes/nvim/dracula.lua $HOME/.config/nvim/lua/themes/nvim/theme.lua
+			 cp $HOME/.config/nvim/lua/themes/lualine/dracula.lua $HOME/.config/nvim/lua/themes/lualine/theme.lua
+		 	 xrdb -merge ~/.Xresources
+             pidof st | xargs kill -s USR1
+			 ;;
+	Gruvbox) cp $HOME/.config/themes/gruvbox $HOME/.Xresources
+			 cp $HOME/.config/nvim/lua/themes/nvim/gruvbox.lua $HOME/.config/nvim/lua/themes/nvim/theme.lua
+			 cp $HOME/.config/nvim/lua/themes/lualine/gruvbox.lua $HOME/.config/nvim/lua/themes/lualine/theme.lua
+		 	 xrdb -merge ~/.Xresources
+             pidof st | xargs kill -s USR1
+			 ;;
+	Minimal) cp $HOME/.config/themes/minimal $HOME/.Xresources
+			 cp $HOME/.config/nvim/lua/themes/nvim/minimal.lua $HOME/.config/nvim/lua/themes/nvim/theme.lua
+			 cp $HOME/.config/nvim/lua/themes/lualine/minimal.lua $HOME/.config/nvim/lua/themes/lualine/theme.lua
+		 	 xrdb -merge ~/.Xresources
+             pidof st | xargs kill -s USR1
+			 ;;
+	Nord)    cp $HOME/.config/themes/nord $HOME/.Xresources
+			 cp $HOME/.config/nvim/lua/themes/nvim/nord.lua $HOME/.config/nvim/lua/themes/nvim/theme.lua
+			 cp $HOME/.config/nvim/lua/themes/lualine/nord.lua $HOME/.config/nvim/lua/themes/lualine/theme.lua
+		 	 xrdb -merge ~/.Xresources
+             pidof st | xargs kill -s USR1
+			 ;;
+	Onedark) cp $HOME/.config/themes/onedark $HOME/.Xresources
+			 cp $HOME/.config/nvim/lua/themes/nvim/onedark.lua $HOME/.config/nvim/lua/themes/nvim/theme.lua
+			 cp $HOME/.config/nvim/lua/themes/lualine/onedark.lua $HOME/.config/nvim/lua/themes/lualine/theme.lua
+		 	 xrdb -merge ~/.Xresources
+             pidof st | xargs kill -s USR1
+			 ;;
+	Cancelar)
+		exit 0 ;;
+esac
