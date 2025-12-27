@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# teclado
+#setxkbmap es
+#setxkbmap latam
+#setxkbmap us -variant dvorak
+#setxkbmap -option caps:swapescape
+
+# touchpad / mouse
+#~/.mouse_touchpad
+
+# aplicaciones de dwm
+#xrdb -merge ~/.Xresources
+#dwmblocks &
+#picom &
+#~/.fehbg
+#unclutter &
+
+# window managers
+#exec dbus-run-session bspwm
+#exec dbus-run-session dwm
+#exec dbus-run-session startfluxbox
+#exec dbus-run-session i3
+#exec dbus-run-session openbox-session
+
+# desktop environments
+#exec dbus-run-session startplasma-x11
+#exec dbus-run-session startlxde
+#exec dbus-run-session mate-session
+#exec dbus-run-session startxfce4
