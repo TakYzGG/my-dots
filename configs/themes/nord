@@ -1,0 +1,65 @@
+! Theme: Nord
+
+! Fuentes
+dwm.font: Ubuntu Mono:bold:size=10
+st.font: Ubuntu Mono:bold:size=10
+dmenu.font: Ubuntu Mono:bold:size=8
+
+! Colores
+dwm.normbgcolor: #2E3440
+dwm.normfgcolor: #81A1C1
+dwm.normbordercolor: #2E3440
+dwm.selbgcolor: #81A1C1
+dwm.selfgcolor: #2E3440
+dwm.selbordercolor: #81A1C1
+
+st.background:  #2E3440
+st.foreground:  #D8DEE9
+st.cursorColor: #D8DEE9
+st.color0:  #2E3440
+st.color1:  #BF616A
+st.color2:  #A3BE8C
+st.color3:  #EBCB8B
+st.color4:  #81A1C1
+st.color5:  #B48EAD
+st.color6:  #88C0D0
+st.color7:  #E5E9F0
+st.color8:  #434C5E
+st.color9:  #BF616A
+st.color10: #A3BE8C
+st.color11: #EBCB8B
+st.color12: #81A1C1
+st.color13: #B48EAD
+st.color14: #8FBCBB
+st.color15: #ECEFF4
+
+dmenu.background : #2E3440
+dmenu.foreground : #81A1C1
+dmenu.selbackground : #81A1C1
+dmenu.selforeground : #2E3440
+
+! Ajustes
+dwm.borderpx:          2
+dwm.smartborders:	   1
+dwm.snap:              32
+dwm.gappih:            2
+dwm.gappiv:   		   2
+dwm.gappoh:   		   2
+dwm.gappov:  		   2
+dwm.smartgaps:         0
+dwm.showbar:           1
+dwm.topbar:            1
+dwm.user_bh:           16
+dwm.systraypinning:	   0
+dwm.systrayonleft:	   0
+dwm.systrayspacing:	   2
+dwm.systraypinningfailfirst: 1
+dwm.showsystray:	   1
+dwm.resizehints:       1
+dwm.mfact:             0.5
+
+st.termname:  st-256color
+st.blinktimeout:  800
+st.bellvolume:    0
+st.tabspaces:     4
+st.borderpx:      2

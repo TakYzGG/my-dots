@@ -1,0 +1,110 @@
+# Configuraciones basicas
+set shell sh
+set shellopts '-eu'
+set scrolloff 10
+set drawbox true
+set ignorecase true
+
+# Funciones personalizadas
+# Crear carpeta
+cmd mkdir ${{
+  printf "Nombre del directorio: "
+  read name
+  mkdir "$name"
+  clear
+}}
+
+# crear archivo
+cmd mkfile ${{
+  printf "Nombre del archivo: "
+  read name
+  touch "$name"
+  clear
+}}
+
+# Descomprimir archivos
+cmd descomprimir ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.rar) unrar x "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *.7z) 7z e "$f" ;;
+      *) echo "Formato no soportado" ;;
+  esac
+}}
+
+# Papelera
+cmd trash ${{
+    set -f
+    mkdir -p ~/.local/share/Trash/files
+    mv $fx ~/.local/share/Trash/files
+}}
+
+# Vaciar papelera
+cmd trash_clear ${{
+    rm -rf ~/.local/share/Trash/files/*
+}}
+
+# Eliminar archivos
+cmd delete ${{
+    set -f
+	rm -rf $fx
+}}
+
+# Abrir archivos
+#
+cmd open ${{
+  export TERMINAL="st"
+  export EDITOR="nvim"
+  export OPENER="xdg-open"
+  mime=$(file --mime-type "$f" -b)
+  case "$mime" in
+    image/vnd.djvu|application/pdf|application/octet-stream|application/vnd*|application/epub*)
+      setsid -f mupdf "$fx" >/dev/null 2>&1 ;;
+    text/*)
+      setsid -f "$TERMINAL" -e "$EDITOR" "$fx" >/dev/null 2>&1 ;;
+    image/x-xcf|image/svg+xml)
+      setsid -f gimp "$f" >/dev/null 2>&1 ;;
+    image/*)
+      feh --auto-zoom "$fx" & ;;
+    audio/*ba)
+      mpv --audio-display=no "$f" ;;
+    video/*)
+      setsid -f mpv "$f" -quiet >/dev/null 2>&1 ;;
+    *)
+      for f in $fx; do setsid -f "$OPENER" "$f" >/dev/null 2>&1; done ;;
+  esac
+}}
+
+# Mapeos
+map c
+map d
+map m
+
+# Mapeo funciones
+map . set hidden!
+map ac descomprimir
+map dd trash
+map dc trash_clear
+map de delete
+map x cut
+map y copy
+map p paste
+map u :unselect; clear
+map <enter> open
+map R reload
+map mf mkfile
+map md mkdir
+map C clear
+
+# Cambiar de directorio
+map gc cd ~/.config
+map gD cd ~/Documentos
+map gd cd ~/Descargas
+map gp cd ~/Imàgenes
+map gm cd /media
+map gv cd ~/Vídeos
+map gs cd ~/.local/bin
+map gt cd ~/.local/share/Trash/files
