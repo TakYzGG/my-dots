@@ -1,5 +1,5 @@
 #!/bin/sh
 
 wallpaper="$HOME/Wallpapers"
-selec=$(find $wallpaper -type f -printf "%f\n"| dmenu -i -p "Wallpaper")
+selec=$(find -L $wallpaper -type f -printf "%f\n"| dmenu -i -p "Wallpaper")
 [ -n "$selec" ] && feh --bg-fill "$wallpaper/$selec"
