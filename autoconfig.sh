@@ -12,6 +12,8 @@ ln -s ~/my-dots/configs/nvim ~/.config/nvim
 ln -s ~/my-dots/configs/picom ~/.config/picom
 ln -s ~/my-dots/configs/themes ~/.config/themes
 ln -s ~/my-dots/configs/scripts/dnemu ~/.config/menus
+ln -s ~/my-dots/dots/bashrc ~/.bashrc
+ln -s ~/my-dots/dots/xinitrc ~/.xinitrc
 ln -s ~/my-dots/wallpapers ~/Wallpapers
 
 # Mover las fuentes
