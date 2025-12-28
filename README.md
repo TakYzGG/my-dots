@@ -9,7 +9,6 @@
 - wallpapers -> mis wallpapers
 
 ## Como usar autoconfig.sh
-- este repo (my-dots) debe estar en la carpeta de usuario
 - darle permisos de ejecucion a autoconfig.sh 'chmod +x autoconfig.sh'
 - ejecutarlo como usuario normal (no root) './autoconfig.sh'
 
