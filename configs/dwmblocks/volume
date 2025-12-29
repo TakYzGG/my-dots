@@ -1,0 +1,10 @@
+#!/bin/sh
+
+volume_percentage=$(pamixer --get-volume)
+mute_status=$(pamixer --get-mute)
+
+if [ "$mute_status" = "true" ]; then
+    echo "Mute"
+else
+    echo "$volume_percentage"
+fi

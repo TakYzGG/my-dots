@@ -1,0 +1,5 @@
+#!/bin/sh
+
+brillo=$(brightnessctl info | grep -oP '\d+%' | tr -d "%")
+
+echo "$brillo"

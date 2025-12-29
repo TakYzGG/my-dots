@@ -1,0 +1,6 @@
+#!/bin/sh
+
+battery_info=$(acpi -b)
+battery_percentage=$(echo "$battery_info" | awk '{print $4}' | tr -d '%,') 
+
+echo "$battery_percentage"
