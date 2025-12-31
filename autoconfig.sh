@@ -14,7 +14,7 @@ ln -s $ruta/configs/lf ~/.config/lf
 ln -s $ruta/configs/nvim ~/.config/nvim
 ln -s $ruta/configs/picom ~/.config/picom
 ln -s $ruta/configs/themes ~/.config/themes
-ln -s $ruta/configs/scripts/dmenu ~/.config/menus
+ln -s $ruta/scripts/dmenu ~/.config/menus
 ln -s $ruta/dots/bashrc ~/.bashrc
 ln -s $ruta/dots/xinitrc ~/.xinitrc
 ln -s $ruta/wallpapers ~/Wallpapers
