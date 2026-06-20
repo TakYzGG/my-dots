@@ -50,7 +50,7 @@ cmd trash_clear ${{
 # Eliminar archivos
 cmd delete ${{
     set -f
-	rm -rf $fx
+	rm -rf "$fx"
 }}
 
 # Abrir archivos

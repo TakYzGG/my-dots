@@ -21,3 +21,6 @@
 - theme.lua -> el tema que se esta usando actualmente en neovim
 - themes -> guarda los temas para neovim y lualine
 - themes/lualine/theme.lua -> el tema que se esta usando actualmente en lualine
+
+## Paquetes para compilar (dwm, dwmblocks, st, dmenu)
+debian: build-essential libx11-dev libxft-dev libxinerama-dev
