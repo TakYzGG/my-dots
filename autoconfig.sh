@@ -13,7 +13,7 @@ ln -s $ruta/configs/dwmblocks ~/.config/dwmblocks
 ln -s $ruta/configs/lf ~/.config/lf
 ln -s $ruta/configs/nvim ~/.config/nvim
 ln -s $ruta/configs/picom ~/.config/picom
-ln -s $ruta/configs/themes ~/.config/themes
+ln -s $ruta/configs/tmux/tmux.conf ~/.tmux.conf
 ln -s $ruta/scripts/dmenu ~/.config/menus
 ln -s $ruta/dots/bashrc ~/.bashrc
 ln -s $ruta/dots/xinitrc ~/.xinitrc
