@@ -1,110 +1,136 @@
-# Configuraciones basicas
+# Basic Settings
 set shell sh
 set shellopts '-eu'
 set scrolloff 10
 set drawbox true
 set ignorecase true
 
-# Funciones personalizadas
-# Crear carpeta
-cmd mkdir ${{
-  printf "Nombre del directorio: "
-  read name
-  mkdir "$name"
-  clear
+# Crear carpetas
+cmd mkdir &{{
+    mkdir -pv "$1"
 }}
 
-# crear archivo
-cmd mkfile ${{
-  printf "Nombre del archivo: "
-  read name
-  touch "$name"
-  clear
-}}
-
-# Descomprimir archivos
-cmd descomprimir ${{
-  case "$f" in
-      *.zip) unzip "$f" ;;
-      *.rar) unrar x "$f" ;;
-      *.tar.gz) tar -xzvf "$f" ;;
-      *.tar.bz2) tar -xjvf "$f" ;;
-      *.tar) tar -xvf "$f" ;;
-      *.7z) 7z e "$f" ;;
-      *) echo "Formato no soportado" ;;
-  esac
+# Crear archivos
+cmd mkfile &{{
+    touch "$1"
 }}
 
 # Papelera
-cmd trash ${{
-    set -f
-    mkdir -p ~/.local/share/Trash/files
-    mv $fx ~/.local/share/Trash/files
+cmd trash &{{
+  mkdir -p ~/.local/share/Trash/files
+
+  printf '%s\n' "$fx" | while IFS= read -r file; do
+    [ -z "$file" ] && continue
+
+    base=$(basename "$file")
+    dest="$HOME/.local/share/Trash/files/$base"
+
+    # si existe, agregar sufijo aleatorio
+    if [ -e "$dest" ]; then
+        rand=$(tr -dc a-z0-9 </dev/urandom | head -c 6)
+        dest="$HOME/.local/share/Trash/files/${base}_$rand"
+    fi
+
+    mv -- "$file" "$dest"
+  done
 }}
 
-# Vaciar papelera
-cmd trash_clear ${{
+# Limpiar papelera
+cmd trashClear &{{
     rm -rf ~/.local/share/Trash/files/*
 }}
 
-# Eliminar archivos
-cmd delete ${{
-    set -f
-	rm -rf "$fx"
-}}
-
 # Abrir archivos
-#
-cmd open ${{
-  export TERMINAL="st"
-  export EDITOR="nvim"
-  export OPENER="xdg-open"
-  mime=$(file --mime-type "$f" -b)
-  case "$mime" in
-    image/vnd.djvu|application/pdf|application/octet-stream|application/vnd*|application/epub*)
-      setsid -f mupdf "$fx" >/dev/null 2>&1 ;;
-    text/*)
-      setsid -f "$TERMINAL" -e "$EDITOR" "$fx" >/dev/null 2>&1 ;;
-    image/x-xcf|image/svg+xml)
-      setsid -f gimp "$f" >/dev/null 2>&1 ;;
-    image/*)
-      feh --auto-zoom "$fx" & ;;
-    audio/*ba)
-      mpv --audio-display=no "$f" ;;
-    video/*)
-      setsid -f mpv "$f" -quiet >/dev/null 2>&1 ;;
-    *)
-      for f in $fx; do setsid -f "$OPENER" "$f" >/dev/null 2>&1; done ;;
-  esac
+cmd open &{{
+	case $(file --mime-type -Lb $f) in
+		text/*) lf -remote "send $id \$nvim \$fx";;
+        image/*) lf -remote "send $id \$feh --auto-zoom \$fx &";;
+        audio/*) lf -remote "send $id \$mpv --audio-display=no \$fx";;
+        video/*) setsid -f mpv "$f" -quiet >/dev/null 2>&1 ;;
+        application/pdf*) setsid -f mupdf "$fx" >/dev/null 2>&1 ;;
+		*) xdg-open "$f"
+
+        #/*) lf -remote "send $id \$ \$fx";; # abrir dentro de lf
+        #/*) setsid -f command "$fx" -quiet >/dev/null 2>&1 ;; # abrir fuera de lf
+	esac
 }}
 
-# Mapeos
+# Comprimir archivos
+cmd compress ${{
+    name="$1"
+    fmt="$2"
+
+    case "$fmt" in
+        zip)
+            zip -r "$name.zip" $fx
+            ;;
+        7z)
+            7z a "$name.7z" $fx
+            ;;
+        tar)
+            tar czf "$name.tar.gz" $fx
+            ;;
+    esac
+}}
+
+# Descomprimir archivos
+cmd extract ${{
+    set -f
+    case "$f" in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf "$f";;
+        *.tar.gz|*.tgz) tar xzvf "$f";;
+        *.tar.xz|*.txz) tar xJvf "$f";;
+        *.zip) unzip "$f";;
+        *.rar) unrar x "$f";;
+        *.7z) 7z x "$f";;
+        *) echo "Unsupported format" ;;
+    esac
+}}
+
+# Cambiar fondo de pantalla
+cmd setWallpaper ${{
+    feh --bg-fill "$f"
+}}
+
+# Bindings
 map c
 map d
 map m
 
-# Mapeo funciones
+# Basic Functions
 map . set hidden!
-map ac descomprimir
+
+map ac push :compress<space>
+map ae extract 
+
 map dd trash
-map dc trash_clear
-map de delete
+map dc trashClear
+
 map x cut
 map y copy
 map p paste
 map u :unselect; clear
+
 map <enter> open
 map R reload
-map mf mkfile
-map md mkdir
+map mf push :mkfile<space>
+map md push :mkdir<space>
 map C clear
 
-# Cambiar de directorio
+map bg setWallpaper
+
+# Movement
 map gc cd ~/.config
+map gC cd ~/Codigo
 map gD cd ~/Documentos
 map gd cd ~/Descargas
 map gp cd ~/Imàgenes
-map gm cd /media
 map gv cd ~/Vídeos
+map gr cd ~/repos
 map gs cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
+
+#map gD cd ~/documents
+#map gd cd ~/downloads
+#map gp cd ~/pictures
+#map gv cd ~/videos
