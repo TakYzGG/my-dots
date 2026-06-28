@@ -3,9 +3,9 @@
 opciones="Apagar\nReiniciar\nCancelar"
 selec=$(echo $opciones | dmenu -i)
 case $selec in
-	Apagar)    password=$(dmenu -p "Ingresa la contraseña")  
+	Apagar)    password=$(dmenu)  
 			   echo $password | sudo -S poweroff ;;
-	Reiniciar) password=$(dmenu -p "Ingresa la contraseña")
+	Reiniciar) password=$(dmenu)
 			   echo $password | sudo -S reboot ;;
 	Cancelar)  exit 0 ;;
 esac
