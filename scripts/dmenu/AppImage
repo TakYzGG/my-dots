@@ -3,4 +3,4 @@
 AppImage="$HOME/AppImage"
 selec=$(find $AppImage -type f -iname "*.AppImage" -printf "%f\n"|
         sed 's/\.AppImage$//' | sort | dmenu -i)
-[ -n "$selec" ] && "$AppImage/$selec"
+[ -n "$selec" ] && "$AppImage/$selec.AppImage"
