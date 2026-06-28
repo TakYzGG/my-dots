@@ -3,33 +3,79 @@
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
 <menu id="root-menu" label="Openbox 3">
-  <item label="Terminal">
-    <action name="Execute"><execute>lxterminal</execute></action>
-  </item>
-  <item label="Navegador">
-    <action name="Execute"><execute>librewolf</execute></action>
-  </item>
-  <item label="Explorador de archivos">
-    <action name="Execute"><execute>lxterminal -e lf</execute></action>
-    <!-- <action name="Execute"><execute>thunar</execute></action> -->
-  </item>
-  <!-- This requires the presence of the 'obamenu' package to work -->
-  <menu id="/Debian" />
-  <separator />
-  <separator />
-  <item label="ObConf">
-    <action name="Execute"><execute>obconf</execute></action>
-  </item>
-  <item label="Reconfigure">
-    <action name="Reconfigure" />
-  </item>
-  <item label="Restart">
-    <action name="Restart" />
-  </item>
-  <separator />
-  <item label="Exit">
-    <action name="Exit" />
-  </item>
+    <!-- Accesos rapidos -->
+    <item label="Terminal">
+      <action name="Execute"><execute>st</execute></action>
+    </item>
+    <item label="Navegador">
+      <action name="Execute"><execute>librewolf</execute></action>
+    </item>
+    <item label="Explorador de archivos">
+      <action name="Execute"><execute>st -e lf</execute></action>
+    </item>
+    <separator />
+
+    <!-- Submenu: aplicaciones -->
+    <menu id="apps" label="Aplicaciones">
+    <item label="Terminal">
+      <action name="Execute"><execute>st</execute></action>
+    </item>
+    <item label="Navegador">
+      <action name="Execute"><execute>librewolf</execute></action>
+    </item>
+    <item label="Explorador de archivos">
+      <action name="Execute"><execute>thunar</execute></action>
+    </item>
+    <item label="Explorador de archivos (cli)">
+      <action name="Execute"><execute>st -e lf</execute></action>
+    </item>
+    <item label="Editor de texto">
+      <action name="Execute"><execute>st -e nvim</execute></action>
+    </item>
+    <item label="Reproductor de musica">
+      <action name="Execute"><execute>st -e cmus</execute></action>
+    </item>
+    <item label="Libreoffice Calc">
+      <action name="Execute"><execute>libreoffice --calc</execute></action>
+    </item>
+    <item label="Libreoffice Impress">
+      <action name="Execute"><execute>libreoffice --impress</execute></action>
+    </item>
+    <item label="Libreoffice Writer">
+      <action name="Execute"><execute>libreoffice --writer</execute></action>
+    </item>
+    </menu>
+    <separator />
+
+    <!-- Submenu: Configuracion -->
+    <menu id="obconfig" label="Configuracion">
+    <item label="Resolucion de pantalla">
+      <action name="Execute"><execute>arandr</execute></action>
+    </item>
+    <item label="Openbox config">
+    <action name="Execute"><execute>st -e nvim ~/.config/openbox/rc.xml</execute></action>
+    </item>
+    <item label="Openbox menu">
+    <action name="Execute"><execute>st -e nvim ~/.config/openbox/menu.xml</execute></action>
+    </item>
+    <item label="Polybar">
+    <action name="Execute"><execute>st -e nvim ~/.config/polybar/config.ini</execute></action>
+    </item>
+    <item label="Preferencias">
+      <action name="Execute"><execute>obconf</execute></action>
+    </item>
+    <item label="Apariencia">
+      <action name="Execute"><execute>lxappearance</execute></action>
+    </item>
+    <item label="Recargar configuracion">
+      <action name="Restart" />
+    </item>
+    </menu>
+    <separator />
+
+    <item label="Cerrar sesion">
+      <action name="Exit" />
+    </item>
 </menu>
 
 </openbox_menu>
