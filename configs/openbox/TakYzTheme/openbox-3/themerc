@@ -1,0 +1,75 @@
+!! Onyx by Dana Jansens
+!! inspired by "Carbon" by p0ng, and the ever so popular Vista glass look
+
+!! Menu background
+menu.items.bg: flat
+menu.items.bg.color: #151515
+
+!! Menu text
+menu.items.text.color: #ffffff
+menu.items.justify: left
+menu.items.disabled.text.color: #151515
+
+!! Menu headers
+menu.title.bg: flat
+menu.title.bg.color: #151515
+menu.title.text.color: #ffffff
+menu.title.text.justify: center
+
+!! Selected menu item
+menu.items.active.bg: flat
+menu.items.active.bg.color: #ffffff
+menu.items.active.text.color: #151515
+
+!! Titlebar
+window.active.title.bg: flat 
+window.active.title.bg.color: #ffffff
+window.inactive.title.bg: flat
+window.inactive.title.bg.color: #151515
+
+!! Titlebar text
+window.label.text.justify: center
+window.active.label.bg: parentrelative
+window.active.label.text.color: #151515
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #ffffff
+
+!! Window buttons
+window.*.button.*.bg: parentrelative
+window.active.button.*.hover.bg: flat
+window.inactive.button.*.hover.bg: parentrelative
+window.*.button.*.pressed.bg: flat
+
+window.active.button.*.hover.bg.color: #ffffff
+window.active.button.*.hover.bg.border.color: #ffffff
+
+window.active.button.*.pressed.bg.color: #ffffff
+window.active.button.*.pressed.image.color: #151515
+window.active.button.*.pressed.bg.border.color: #ffffff
+window.inactive.button.*.pressed.bg.color: #151515
+window.inactive.button.*.pressed.image.color: #ffffff
+window.inactive.button.*.pressed.bg.border.color: #151515
+
+window.active.button.*.image.color: #151515
+window.active.button.disabled.image.color: #151515
+window.inactive.button.*.image.color: #ffffff
+window.inactive.button.disabled.image.color: #ffffff
+
+!! Borders
+window.active.border.color: #ffffff
+window.inactive.border.color: #151515
+window.inactive.title.separator.color: #151515
+border.width: 2
+padding.width: 2
+window.handle.width: 0
+window.active.client.color:  #ffffff
+window.inactive.client.color:  #151515
+window.client.padding.width: 1
+window.client.padding.height: 1
+menu.overlap: 0
+
+!! On-screen displays
+osd.bg: flat
+osd.bg.color: #151515
+osd.label.text.color: #ffffff
+osd.border.color: #ffffff
