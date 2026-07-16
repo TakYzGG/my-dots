@@ -12,7 +12,7 @@ basicconf() {
     ln -sfv $RUTA/dots/xinitrc ~/.xinitrc
     ln -sfv $RUTA/wallpapers ~/Wallpapers
 
-    cp $RUTA/my-dots/fonts/* ~/.local/share/fonts
+    cp $RUTA/fonts/* ~/.local/share/fonts
 }
 
 # Instalar configuracion de dwm
