@@ -10,7 +10,6 @@
 #~/.mouse_touchpad
 
 # aplicaciones de dwm
-#xrdb -merge ~/.Xresources
 #dwmblocks &
 #picom &
 #~/.fehbg
@@ -28,3 +27,6 @@
 #exec dbus-run-session startlxde
 #exec dbus-run-session mate-session
 #exec dbus-run-session startxfce4
+
+# servicios
+#exec dbus-run-session pulseaudio --daemonize=no --exit-idle-time=-1
