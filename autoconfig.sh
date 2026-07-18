@@ -12,8 +12,8 @@ basicconf() {
     ln -sfv $RUTA/dots/xinitrc ~/.xinitrc
     ln -sfv $RUTA/wallpapers ~/Wallpapers
 
-    cp $RUTA/icons/* ~/.icons
-    cp $RUTA/themes/* ~/.themes
+    cp -r $RUTA/icons/* ~/.icons
+    cp -r $RUTA/themes/* ~/.themes
     cp $RUTA/fonts/* ~/.local/share/fonts
 }
 
