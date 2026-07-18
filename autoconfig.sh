@@ -12,6 +12,8 @@ basicconf() {
     ln -sfv $RUTA/dots/xinitrc ~/.xinitrc
     ln -sfv $RUTA/wallpapers ~/Wallpapers
 
+    cp $RUTA/icons/* ~/.icons
+    cp $RUTA/themes/* ~/.themes
     cp $RUTA/fonts/* ~/.local/share/fonts
 }
 
@@ -35,6 +37,7 @@ RUTA=$(pwd)
 # Crear carpetas si no existen
 mkdir -p ~/.config
 mkdir -p ~/.local/share/fonts
+mkdir -p ~/.icons
 mkdir -p ~/.themes
 
 # Menu
