@@ -122,11 +122,12 @@ map bg setWallpaper
 
 # Movement
 map gc cd ~/.config
-map gC cd ~/Codigo
-map gD cd ~/Documentos
-map gd cd ~/Descargas
-map gp cd ~/Imàgenes
-map gv cd ~/Vídeos
+map gC cd ~/codigo
+map gD cd ~/documents
+map gd cd ~/downloads
+map gp cd ~/images
+map gv cd ~/videos
+map gm cd ~/music
 map gr cd ~/repos
 map gs cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
