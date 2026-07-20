@@ -1,0 +1,9 @@
+#!/bin/sh
+
+state=$(connmanctl state | awk -F' = ' '/State/ {print $2}')
+
+if [ "$state" = "online" ] || [ "$state" = "ready" ]; then
+    echo "Conectado"
+else
+    echo "Desconectado"
+fi
