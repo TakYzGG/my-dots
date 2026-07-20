@@ -3,8 +3,8 @@
 opciones="Todo\nVentana\nSeleccion\nCancelar"
 selec=$(echo $opciones | dmenu -i)
 case $selec in
-	Todo) 	   scrot ~/Screenshots/%Y-%m-%d_%H-%M-%S.png ;;
-	Ventana)   scrot -u ~/Screenshots/%Y-%m-%d_%H-%M-%S.png ;;
-	Seleccion) scrot -s ~/Screenshots/%Y-%m-%d_%H-%M-%S.png ;;
+	Todo) 	   scrot ~/screenshots/%Y-%m-%d_%H-%M-%S.png ;;
+	Ventana)   scrot -u ~/screenshots/%Y-%m-%d_%H-%M-%S.png ;;
+	Seleccion) scrot -s ~/screenshots/%Y-%m-%d_%H-%M-%S.png ;;
 	Cancelar)  exit 0;;
 esac
