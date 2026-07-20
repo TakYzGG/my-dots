@@ -10,7 +10,7 @@ basicconf() {
     ln -sfv $RUTA/scripts/dmenu ~/.config/menus
     ln -sfv $RUTA/dots/bashrc ~/.bashrc
     ln -sfv $RUTA/dots/xinitrc ~/.xinitrc
-    ln -sfv $RUTA/wallpapers ~/Wallpapers
+    ln -sfv $RUTA/wallpapers ~/wallpapers
 
     cp -r $RUTA/icons/* ~/.icons
     cp -r $RUTA/themes/* ~/.themes
@@ -39,6 +39,8 @@ mkdir -p ~/.config
 mkdir -p ~/.local/share/fonts
 mkdir -p ~/.icons
 mkdir -p ~/.themes
+mkdir -p ~/appimage
+mkdir -p ~/screenshots
 
 # Menu
 OPT=-1
