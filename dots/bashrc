@@ -1,7 +1,7 @@
 # <-Configuracion de Bash->
 
 # Pront
-PS1='[\[\e[95m\]\u\[\e[94m\] \w\[\e[0m\]]\[\e[91m\]\\$\[\e[0m\] ' 
+PS1='[\[\e[95m\]\u\[\e[94m\] \w\[\e[0m\]]\[\e[91m\]\\$\[\e[0m\] '
 
 # Exportar
 export TERM=xterm-256color

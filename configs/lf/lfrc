@@ -112,6 +112,7 @@ map p paste
 map u :unselect; clear
 
 map <enter> open
+map e open
 map R reload
 map mf push :mkfile<space>
 map md push :mkdir<space>

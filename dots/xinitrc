@@ -3,21 +3,24 @@
 # teclado
 #setxkbmap es
 #setxkbmap latam
-#setxkbmap us -variant dvorak
-#setxkbmap -option caps:swapescape
+setxkbmap us -variant dvorak
+setxkbmap -option caps:swapescape
 
 # touchpad / mouse
-#~/.mouse_touchpad
+~/.mouse_touchpad
+
+# brillo
+brightnessctl set 10%
 
 # aplicaciones de dwm
-#dwmblocks &
-#picom &
-#~/.fehbg
-#unclutter &
+dwmblocks &
+picom &
+~/.fehbg
+unclutter &
 
 # window managers
 #exec dbus-run-session bspwm
-#exec dbus-run-session dwm
+exec dbus-run-session dwm
 #exec dbus-run-session startfluxbox
 #exec dbus-run-session i3
 #exec dbus-run-session openbox-session
@@ -29,4 +32,4 @@
 #exec dbus-run-session startxfce4
 
 # servicios
-#exec dbus-run-session pulseaudio --daemonize=no --exit-idle-time=-1
+exec dbus-run-session pulseaudio --daemonize=no --exit-idle-time=-1

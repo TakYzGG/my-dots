@@ -20,6 +20,14 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "setlocal formatoptions-=r formatoptions-=o",
 })
 
+-- Restaurar el cursor al salir
+vim.api.nvim_create_autocmd("VimLeave", {
+    callback = function()
+        io.write("\27[6 q")
+        io.flush()
+    end,
+})
+
 -- No crear archivos de respaldo
 vim.opt.backup = false
 vim.opt.writebackup = false
