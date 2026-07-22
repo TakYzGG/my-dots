@@ -6,6 +6,7 @@ basicconf() {
     ln -sfv $RUTA/configs/lf ~/.config/lf
     ln -sfv $RUTA/configs/nvim ~/.config/nvim
     ln -sfv $RUTA/configs/picom ~/.config/picom
+    ln -sfv $RUTA/configs/fastfetch ~/.config/fastfetch
     ln -sfv $RUTA/configs/tmux/tmux.conf ~/.tmux.conf
     ln -sfv $RUTA/scripts/dmenu ~/.config/menus
     ln -sfv $RUTA/dots/bashrc ~/.bashrc
