@@ -6,10 +6,10 @@
   },
 
   "modules": [
-    "break",
     // system
     "os",
     "kernel",
+    "packages",
     "uptime",
     "break",
 
