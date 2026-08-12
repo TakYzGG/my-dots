@@ -129,10 +129,6 @@ map gp cd ~/images
 map gv cd ~/videos
 map gm cd ~/music
 map gr cd ~/repos
-map gs cd ~/.local/bin
+map gs cd ~/screenshots
+map gw cd ~/wallpapers
 map gt cd ~/.local/share/Trash/files
-
-#map gD cd ~/documents
-#map gd cd ~/downloads
-#map gp cd ~/pictures
-#map gv cd ~/videos
