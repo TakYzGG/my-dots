@@ -125,7 +125,7 @@ map gc cd ~/.config
 map gC cd ~/codigo
 map gD cd ~/documents
 map gd cd ~/downloads
-map gp cd ~/images
+map gi cd ~/images
 map gv cd ~/videos
 map gm cd ~/music
 map gr cd ~/repos
